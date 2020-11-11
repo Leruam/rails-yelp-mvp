@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
 
-  def new
-    set_restaurant
-    @review = Review.new
-  end
+  # def new
+  #   set_restaurant
+  #   @review = Review.new
+  # end
 
   def create
     set_restaurant
