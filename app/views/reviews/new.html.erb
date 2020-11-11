@@ -1,17 +1,19 @@
 <h1>Please enter details of your review for <strong> <%= @restaurant.name %></strong> </h1>
 <br>
 
-<%= simple_form_for [@restaurant, @review] do |f| %>
-  <%#= f.error_notification %>
-  <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <!-- cest quoi ça? -->
+<div class="container">
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%#= f.error_notification %>
+    <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <!-- cest quoi ça? -->
 
-  <div class="form-inputs">
-    <%= f.input :content %>
-    <%= f.input :rating %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :content %>
+      <%= f.input :rating %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, class:"btn btn-primary"%>
+    </div>
+  <% end %>
+</div>

@@ -1,11 +1,18 @@
 <h1>The <%= @restaurant.name %> page</h1>
 <br>
-<h2>Restaurant Address: <%= @restaurant.address %> </h2>
-<br>
-<h2>Restaurant category: <%= @restaurant.category %> </h2>
-<br>
-<h2>Restaurant reviews:
-  <% @restaurant.reviews.each do |review| %>
-    <h3> <%= review.content %> ---  rating: <%= review.rating %></h3>
-  <% end %>
-</h2>
+<div class="container">
+  <h2>Restaurant Address: <%= @restaurant.address %> </h2>
+  <br>
+  <h2>Restaurant category: <%= @restaurant.category %> </h2>
+  <br>
+  <h2>Restaurant reviews:
+    <% @restaurant.reviews.each do |review| %>
+      <h3> <%= review.content %> ---  <%= "⭐️"* review.rating %></h3>
+    <% end %>
+  </h2>
+  <br>
+
+  <div> <%= link_to 'Create a review for this restaurant', new_restaurant_review_path(@restaurant) %> </div>
+
+  <%= render 'navbar'%>
+</div>
