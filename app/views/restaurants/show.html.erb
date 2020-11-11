@@ -4,4 +4,8 @@
 <br>
 <h2>Restaurant category: <%= @restaurant.category %> </h2>
 <br>
-<h2>Restaurant reviews: <%= @restaurant.reviews %> </h2>
+<h2>Restaurant reviews:
+  <% @restaurant.reviews.each do |review| %>
+    <h3> <%= review.content %> ---  rating: <%= review.rating %></h3>
+  <% end %>
+</h2>
